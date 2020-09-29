@@ -23,7 +23,9 @@ exports.createOrder =(req,res)=>{
         return res.json({
         order:order
         })
-    })
+    }).catch(err => {
+    console.log(err);
+  })
 }
 exports.getAll =(req,res)=>{
     Order.find().populate("user","_id name").exec((err,order)=>{
