@@ -17,10 +17,12 @@ exports.createOrder =(req,res)=>{
     order.save((err,order)=>{
         if(err){
 			console.log(err)
-            return res.status(400).json({error:" order not saved in DB"})
+            return res.status(400).json({error:"order not saved in DB"})
         }
 		console.log("all good")
-        return res.json(order)
+        return res.json({
+        order:order
+        })
     })
 }
 exports.getAll =(req,res)=>{

@@ -1,9 +1,11 @@
+
+var braintree = require("braintree");
 exports.getToken=(req,res)=>{
     gateway.clientToken.generate({}, function (err, response) {
         if(err){
-            return res.status(400).send(err)
+             res.status(500).send(err)
         }else{
-             return  res.send(response)
+               res.send(response)
         }
       });
 } 
@@ -22,15 +24,14 @@ exports.processPayment=(req,res)=>{
         }
       }, function (err, result) {
         if(err){
-            return res.status(400).json(err)
+             res.status(500).json(err)
         }else{
-              return  res.json(result)
+               res.json(result)
         }
       });
 
 }
 
-var braintree = require("braintree");
 
 var gateway = braintree.connect({
   environment: braintree.Environment.Sandbox,
