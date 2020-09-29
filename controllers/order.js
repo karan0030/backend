@@ -20,7 +20,7 @@ exports.createOrder =(req,res)=>{
             return res.status(400).json({error:" order not saved in DB"})
         }
 		console.log("all good")
-         res.json(order)
+        return res.json(order)
     })
 }
 exports.getAll =(req,res)=>{

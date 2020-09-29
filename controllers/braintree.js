@@ -3,7 +3,7 @@ exports.getToken=(req,res)=>{
         if(err){
             return res.status(400).send(err)
         }else{
-               res.send(response)
+             return  res.send(response)
         }
       });
 } 
@@ -24,7 +24,7 @@ exports.processPayment=(req,res)=>{
         if(err){
             return res.status(400).json(err)
         }else{
-               res.json(result)
+              return  res.json(result)
         }
       });
 
