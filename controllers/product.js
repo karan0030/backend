@@ -134,7 +134,7 @@ exports.getAllUniqueCategory =(req,res)=>{
 }
 
 exports.getAllProduct =(req,res)=>{
-    let limit = req.query.limit? parseInt(req.query.limit):9
+    let limit = req.query.limit? parseInt(req.query.limit):12
     let sortBy =req.query.sortBy ?req.query.sortBy:"_id"
     Product.find()
     .select("-photo")
